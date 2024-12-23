@@ -1,4 +1,4 @@
-# Deep-Learning
+# Deep-Learning: Tabzilla notes
 
 # Inicio de proyecto: 
 ## 1. Clonar repositorio
@@ -39,7 +39,7 @@ OK
 ```sudo python3 tabzilla_data_preprocessing.py --dataset_name 'openml__iris__59'```
 
 # TabZilla Experiments
-## Ejecución de modelo con hiperparámetros random```
+## Ejecución de modelo con hiperparámetros random
 ```sudo python3 tabzilla_experiment.py --experiment_config 'tabzilla_experiment_config.yml' --model_name 'KNN' --dataset_dir '/home/markov/Documents/DL_Projects/tabzilla/TabZilla/datasets/openml__iris__59'```
 
 Respuesta:
