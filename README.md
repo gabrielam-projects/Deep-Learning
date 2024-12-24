@@ -37,6 +37,7 @@ OK
 
 ## Conversión de dataset a formato .npy.gz
 ```sudo python3 tabzilla_data_preprocessing.py --dataset_name 'openml__iris__59'```
+```sudo python3 tabzilla_data_preprocessing.py --dataset_name 'openml__Amazon_employee_access__34539'```
 
 # TabZilla Experiments
 ## Ejecución de modelo con hiperparámetros random
@@ -115,5 +116,5 @@ scale_numerical_features: Quantile
 - Elimnar carpeta nueva:
 ```sudo rm -r /home/markov/Documents/DL_Projects/tabzilla/TabZilla/my_results```
 
-- Ejecuciones con otros modelos:
-```sudo python3 tabzilla_experiment.py --experiment_config 'tabzilla_experiment_myconfig.yml' --model_name 'TabTransformer' --dataset_dir '/home/markov/Documents/DL_Projects/tabzilla/TabZilla/datasets/openml__iris__59'```
+- Ejecuciones con otros modelos (TabTransformer):
+```sudo python3 tabzilla_experiment.py --experiment_config 'tabzilla_experiment_myconfig.yml' --model_name 'TabTransformer' --dataset_dir '/home/markov/Documents/DL_Projects/tabzilla/TabZilla/datasets/openml__Amazon_employee_access__34539'```
