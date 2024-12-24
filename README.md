@@ -89,11 +89,10 @@ output_dir: ./my_results/
 
 ###### experiment & trial time limit in seconds (10 hours / 2 hours)
 experiment_time_limit: 36000
-trial_time_limit: 7200
-
+trial_time_limit: 3600
 
 ###### number of trials for hyperparameter search & optimization
-n_random_trials: 20
+n_random_trials: 10
 n_opt_trials: 0
 hparam_seed: 0
 
@@ -103,11 +102,12 @@ gpu_ids: [0]
 data_parallel: True
 
 ###### Training parameters
-batch_size: 128
-val_batch_size: 256
+batch_size: 64
+val_batch_size: 128
 early_stopping_rounds: 20
-epochs: 500
+epochs: 200
 logging_period: 100
+scale_numerical_features: Quantile
 
 - Nueva ejecución con "myconfig.yml":
 ```sudo python3 tabzilla_experiment.py --experiment_config 'tabzilla_experiment_myconfig.yml' --model_name 'KNN' --dataset_dir '/home/markov/Documents/DL_Projects/tabzilla/TabZilla/datasets/openml__iris__59'```
