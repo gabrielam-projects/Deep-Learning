@@ -46,3 +46,74 @@ Respuesta:
 ...
 Trial 30 complete
 trials complete. results written to /home/markov/Documents/DL_Projects/tabzilla/TabZilla/results
+
+## Visualizar algoritmos disponibles:
+```sudo python3 tabzilla_alg_handler.py```
+
+all algorithms:
+LinearModel
+KNN
+SVM
+DecisionTree
+RandomForest
+XGBoost
+CatBoost
+LightGBM
+MLP
+TabNet
+VIME
+TabTransformer
+NODE
+DeepGBM
+STG
+NAM
+DeepFM
+SAINT
+DANet
+TabPFNModel
+rtdl_MLP
+rtdl_ResNet
+rtdl_FTTransformer
+
+## Nueva configuración
+Para modificar la configuración de hiperparámetros:
+- Creación de un nuevo archivo .yml
+```sudo touch tabzilla_experiment_myconfig.yml```
+
+- Modificación en terminal:
+```sudo nano /home/markov/Documents/DL_Projects/tabzilla/TabZilla/tabzilla_experiment_myconfig.yml```
+
+- Nueva configuración:
+###### directory where results will be written
+output_dir: ./my_results/
+
+###### experiment & trial time limit in seconds (10 hours / 2 hours)
+experiment_time_limit: 36000
+trial_time_limit: 7200
+
+
+###### number of trials for hyperparameter search & optimization
+n_random_trials: 20
+n_opt_trials: 0
+hparam_seed: 0
+
+###### GPU parameters
+use_gpu: True
+gpu_ids: [0]
+data_parallel: True
+
+###### Training parameters
+batch_size: 128
+val_batch_size: 256
+early_stopping_rounds: 20
+epochs: 500
+logging_period: 100
+
+- Nueva ejecución con "myconfig.yml":
+```sudo python3 tabzilla_experiment.py --experiment_config 'tabzilla_experiment_myconfig.yml' --model_name 'KNN' --dataset_dir '/home/markov/Documents/DL_Projects/tabzilla/TabZilla/datasets/openml__iris__59'```
+
+- Elimnar carpeta nueva:
+```sudo rm -r /home/markov/Documents/DL_Projects/tabzilla/TabZilla/my_results```
+
+- Ejecuciones con otros modelos:
+```sudo python3 tabzilla_experiment.py --experiment_config 'tabzilla_experiment_myconfig.yml' --model_name 'TabTransformer' --dataset_dir '/home/markov/Documents/DL_Projects/tabzilla/TabZilla/datasets/openml__iris__59'```
